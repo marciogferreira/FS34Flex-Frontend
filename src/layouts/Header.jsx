@@ -1,18 +1,16 @@
 import './header.css';
 
 function Header (props) {
-
-    console.log(props)
-
+    // https://dontpad.com/flex34
     return (
         <header>
-            <h1>Header - {props.nome}</h1>
-            <p>
-                <strong>Carga horária: </strong>
-                {props.cargah}
-            </p>
-            <div>
-                {props.children}
+            <div className="row">
+                <div className="col-3">
+                    LogoMarca
+                </div>
+                <div className="col-9">
+                    Menu
+                </div>
             </div>
         </header>
     )
