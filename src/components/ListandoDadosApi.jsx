@@ -17,7 +17,7 @@ function ListandoDadosApi() {
     React.useEffect(() => {
         
         console.log("Componente Montando...")
-        document.querySelector("body").style.background = 'black'
+        // document.querySelector("body").style.background = 'black'
         consultarApi()
 
         if(contador == 10) {
