@@ -1,4 +1,5 @@
 import './header.css';
+import Menu from './Menu';
 
 function Header (props) {
     // https://dontpad.com/flex34
@@ -9,7 +10,7 @@ function Header (props) {
                     LogoMarca
                 </div>
                 <div className="col-9">
-                    Menu
+                    <Menu />
                 </div>
             </div>
         </header>
