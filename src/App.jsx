@@ -4,6 +4,20 @@ import HomePage from './pages/HomePage'
 import QuemSomosPage from './pages/QuemSomosPage'
 import ProdutosPage from './pages/ProdutosPage'
 import ProdutosDetalhesPage from './pages/ProdutosDetalhesPage'
+import LoginPage from './pages/LoginPage'
+import DashboardPage from './pages/Admin/DashboardPage'
+
+function RotaPrivada(props) {
+
+  let autorizado = true
+  if(autorizado === false) {
+    return (
+      <LoginPage />
+    )
+  }
+  return props.children;
+}
+
 function App() {
   return (
     <>
@@ -13,6 +27,13 @@ function App() {
           <Route path='/quem-somos' element={<QuemSomosPage />} />
           <Route path='/produtos' element={<ProdutosPage />} />
           <Route path='/produtos/:codigo' element={<ProdutosDetalhesPage />} />
+
+          <Route path='/login' element={<LoginPage />} />
+          <Route path='/admin' element={
+            <RotaPrivada>
+              <DashboardPage />
+            </RotaPrivada>
+          } />
 
         </Routes>
       </BrowserRouter>
