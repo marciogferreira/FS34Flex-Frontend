@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import HomePage from './pages/HomePage'
 import QuemSomosPage from './pages/QuemSomosPage'
@@ -6,10 +6,11 @@ import ProdutosPage from './pages/ProdutosPage'
 import ProdutosDetalhesPage from './pages/ProdutosDetalhesPage'
 import LoginPage from './pages/LoginPage'
 import DashboardPage from './pages/Admin/DashboardPage'
+import { AuthContext } from './contexts/AuthContext'
 
 function RotaPrivada(props) {
-
-  let autorizado = true
+  const { autorizado } = useContext(AuthContext)
+  
   if(autorizado === false) {
     return (
       <LoginPage />
