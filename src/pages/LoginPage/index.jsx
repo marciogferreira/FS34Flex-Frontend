@@ -3,6 +3,7 @@ import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router'
 import { useContext } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
+import axios from 'axios'
 
 function LoginPage() {
 
@@ -11,8 +12,11 @@ function LoginPage() {
     const navigate = useNavigate()
     const { setAutorizado } = useContext(AuthContext)
 
-    function handleLogin() {
-        if(login == 'admin' && senha == '123123') {
+    async function handleLogin() {
+
+        const response = await axios.get(`https://jsonplaceholder.typicode.com/users?email=${login}`)
+        
+        if(response.data.length) {
             Swal.fire({
                 title: 'Sucesso!',
                 text: 'Login Efetuado com Sucesso!',

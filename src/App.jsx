@@ -7,6 +7,7 @@ import ProdutosDetalhesPage from './pages/ProdutosDetalhesPage'
 import LoginPage from './pages/LoginPage'
 import DashboardPage from './pages/Admin/DashboardPage'
 import { AuthContext } from './contexts/AuthContext'
+import ProductsAdminPage from './pages/Admin/ProductsAdminPage'
 
 function RotaPrivada(props) {
   const { autorizado } = useContext(AuthContext)
@@ -33,6 +34,11 @@ function App() {
           <Route path='/admin' element={
             <RotaPrivada>
               <DashboardPage />
+            </RotaPrivada>
+          } />
+           <Route path='/admin/produtos' element={
+            <RotaPrivada>
+              <ProductsAdminPage />
             </RotaPrivada>
           } />
 
