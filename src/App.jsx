@@ -36,6 +36,8 @@ function App() {
             </RotaPrivada>
           } />
 
+          <Route path='*' element={<h1>NotFound</h1>} />
+
         </Routes>
       </BrowserRouter>
     </>
